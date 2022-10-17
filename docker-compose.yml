@@ -7,6 +7,9 @@ services:
       - app-network
     depends_on:
       - database
+    restart: on-failure
+    volumes:
+      - database-data:/var/lib/postgresql/data
 
   database:
     container_name: database
@@ -27,8 +30,7 @@ services:
 
 
 volumes:
-  my_db_volume:
-    driver: local
+  database-data:
 
 networks:
   app-network:
