@@ -40,7 +40,7 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./simple-api
           # Note: tags has to be all lower-case
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/correction-tp1-devops/simple-api        
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/correction-tp1-devops:simple-api        
 
       - name: Build image and push database
         uses: docker/build-push-action@v2
@@ -48,7 +48,7 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./database
           # Note: tags has to be all lower-case
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/correction-tp1-devops/database
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/correction-tp1-devops:database
 
       - name: Build image and push httpd
         uses: docker/build-push-action@v2
@@ -56,4 +56,4 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./httpd
           # Note: tags has to be all lower-case
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/correction-tp1-devops/httpd
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/correction-tp1-devops:httpd
